@@ -3,15 +3,16 @@
 # Install confluence, See README.md for more.
 #
 class confluence::config(
-  $tomcat_port         = $confluence::tomcat_port,
-  $tomcat_max_threads  = $confluence::tomcat_max_threads,
-  $tomcat_accept_count = $confluence::tomcat_accept_count,
-  $tomcat_proxy        = $confluence::tomcat_proxy,
-  $tomcat_extras       = $confluence::tomcat_extras,
-  $manage_server_xml   = $confluence::manage_server_xml,
-  $context_path        = $confluence::context_path,
-  $ajp                 = $confluence::ajp,
-) {
+  $tomcat_port                = $confluence::tomcat_port,
+  $tomcat_max_threads         = $confluence::tomcat_max_threads,
+  $tomcat_accept_count        = $confluence::tomcat_accept_count,
+  $tomcat_proxy               = $confluence::tomcat_proxy,
+  $tomcat_extras              = $confluence::tomcat_extras,
+  $manage_server_xml          = $confluence::manage_server_xml,
+  $context_path               = $confluence::context_path,
+  $ajp                        = $confluence::ajp,
+  $start_confluence_java_opts = $confluence::java_opts,
+){
 
   File {
     owner => $confluence::user,
